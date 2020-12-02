@@ -15,27 +15,28 @@ class Recommendation extends HTMLElement{
     }
 
     render(){
-        console.log(this._data);
         if(this._data != null)
             this.innerHTML = `
-            <div class="card w-75 mx-auto">
+            <div class="card w-75 mx-auto shadow-sm">
                 <div class="overflow-hidden mx-auto w-100" style="height:230px">
                     <img src="${this._data.image}" class="card-img-top" alt="${this._data.name}">
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title text-center font-weight-bold">${this._data.name}</h4>
+                    <h2 class="card-title text-center font-weight-bold">${this._data.name}</h2>
                     <table class="table table-borderless">
                         <tr>
                             <td>
-                                <span class="float-left small">${this._data.category}</span>
+                                <span class="float-left font-weight-bold">${this._data.category}</span>
                             </td>
                             <td>
-                                <span class="float-right small">${this._data.origin}</span>
+                                <span class="float-right font-weight-bold">${this._data.origin}</span>
                             </td>
                         </tr>
                     </table>
                     <p class="card-text">${this._data.description.substring(0,700)}...</p>
-                    <a href="#" class="btn btn-primary w-100">Detail</a>
+                    <div class="text-center">
+                    <a href="${this._data.youtube}" class="btn btn-outline-danger w-50" target="_blank">Video Tutorial</a>
+                    </div>
                 </div>
             </div>
             `;

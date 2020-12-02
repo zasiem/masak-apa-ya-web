@@ -10,7 +10,8 @@ class Random {
                     category: response.data.meals[0].strCategory,
                     origin: response.data.meals[0].strArea,
                     description: response.data.meals[0].strInstructions,
-                    image: response.data.meals[0].strMealThumb
+                    image: response.data.meals[0].strMealThumb,
+                    youtube: response.data.meals[0].strYoutube,
                 }
                 return data;
             })
